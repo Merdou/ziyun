@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hxzy.mapper.FollowMapper">
+
+  <resultMap id="BaseResultMap" type="com.hxzy.entity.Follow">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="who" jdbcType="INTEGER" property="who" />
+    <result column="me" jdbcType="INTEGER" property="me" />
+    <result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
+  </resultMap>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from follow
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insert" parameterType="com.hxzy.entity.Follow">
+    insert into follow (id, who, me, 
+      createDate)
+    values (#{id,jdbcType=INTEGER}, #{who,jdbcType=INTEGER}, #{me,jdbcType=INTEGER}, 
+      #{createDate,jdbcType=TIMESTAMP})
+  </insert>
+
+  <select id="searchFollowMeFans" parameterType="int" resultType="int">
+    select count(0)
+    from follow
+    where me=#{studentId}
+  </select>
+
+</mapper>

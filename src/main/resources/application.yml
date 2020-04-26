@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ziyun?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123
+    type: com.alibaba.druid.pool.DruidDataSource
+  freemarker:
+    allow-request-override: true
+    request-context-attribute: request
+  servlet:
+    multipart:
+      max-file-size: 5MB
+  redis:
+    password: hxzy
+    host: 192.168.1.180
+    lettuce:
+      pool:
+        min-idle: 2      #最小等待数据
+        max-idle: 8      #最大的等待数据
+        max-active: 200  #最大加接数据
+        max-wait: 10000  #10秒还没有操作完就自动回收连接
+    port: 6379
+#    sentinel:
+#      master:  mymaster
+#      nodes:
+#        - 192.168.1.180:26379
+#        - 192.168.1.180:26380
+#        - 192.168.1.180:26381
+logging:
+  file: ziyun.log
+  level:
+    com.hxzy: debug
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.hxzy.entity
+img:
+  path: E:\\imgServer\\
+  server: /imgcms/
+sms:
+  forgetpwd:
+    templateId: 549828
+    expired_minute: 5
+    retry_seconds: 120
+    code_len: 5
+    redis_prefix: 'student:findpwd:'

@@ -1,0 +1,186 @@
+body{
+	font-size: 16px;
+}
+
+ul,ol{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+.w1200{
+	width:1200px;
+	margin: 0 auto ;
+}
+
+.h88{
+	height:88px;
+	background-color: #fff;
+}
+.logo{
+	float: left;
+	margin-top:18px;
+}
+
+.logintype{
+	float: right;
+}
+
+.line{
+	border-bottom: 1px solid #999;
+}
+.logintype li{
+	height:88px;
+	line-height:88px;
+	float: left;
+	font-size: 18px;
+	padding-left: 10px;
+}
+
+.logintype .active{
+	color: #f43254 ;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.content{
+	padding: 0;
+	background-image: url(../../img/beijing1.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 687px;
+	position: relative;
+}
+
+.nobg{
+	background-image: none;
+}
+
+.rightbg{
+	height: 620px;
+	position: absolute;
+	bottom: 20px;
+	right: 30px;
+}
+
+.rightbg img{
+	height: 100%;
+}
+
+.h687{
+	height: 687px;
+	position: relative;
+	z-index: 300;
+}
+
+.ziyun{
+	padding-top: 180px;
+}
+
+.whitecolor{
+	color:#fff;
+}
+
+.whitecolor  h2{
+	font-size: 44px;
+}
+
+.whitecolor  h1{
+	font-weight: bold;
+	font-size:71px;
+}
+
+.whitecolor p{
+	width: 45px;
+	height: 1px;
+	background-color: #fff;
+	margin: 40px 0 50px;
+}
+
+.whitecolor h3{
+	width: 367px;
+	font-size: 16px;
+}
+
+.login{
+	float: left;
+	margin-top: 180px;
+	width: 100%;
+}
+
+.login .form-group input{
+	height: 40px;
+
+}
+
+.login #btnLogin{
+	width: 100%;
+	height: 40px;
+	background-color: #D10E30;
+	font-size: 16px;
+}
+
+.login .forget{
+	margin-top: 20px;
+}
+
+.login .panel-title{
+	font-size: 20px;
+}
+
+.footer{
+	background-color: #232426;
+
+	padding: 40px 0 40px 0;
+}
+
+.footer .tm{
+	width: 550px;
+	margin: 0 auto;
+}
+.footer .tm li{
+	padding:0 30px;
+	border-right:1px solid #999;
+	color:#999;
+	float:left;
+}
+
+.footer .tm  .yq{
+	border-right: 0;
+}
+
+.footer h6{
+	color: #666;
+	margin-top: 10px;
+	text-align: center;
+	font-size: 14px;
+}
+
+
+
+.form-wrap{
+	width: 402px;
+	margin: 0 auto;
+	margin-top: 150px;
+	background-color: #fff;
+}
+
+.spanPwd {
+	font-size: 20px;
+	line-height: 110px;
+	padding-left: 50px;
+}
+
+#forgetForm .field{
+	height: 50px;
+}
+
+#forgetForm .form-control[disabled]{
+	background-color: #d9534f;
+}

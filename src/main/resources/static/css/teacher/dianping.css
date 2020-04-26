@@ -1,0 +1,277 @@
+.uploadSection{
+	width: 100%;
+	min-width: 1200px;
+}
+
+.uploadSection .dpz {
+    margin-top: 30px; 
+}
+
+.uploadSection .title{ 
+	width:282px;
+	height:46px;
+	background:url(../../img/jiantou.png) no-repeat;
+	background-size:282px 46px;
+	color:white;
+	font-size:18px;
+	text-align:center;
+	line-height:46px; 
+}
+ 
+.uploadSection .dp {
+    width: 100%; 
+    overflow: hidden;
+}
+
+.uploadSection .dp .zy{
+	width: 260px; 
+	float: left;
+	padding: 30px 0 0;
+	 
+}
+
+
+.uploadSection .dp .zy  h2{
+	font-weight: normal;
+    font-size: 18px;
+	display: inline-block;
+	white-space: nowrap; 
+	width: 100%; 
+	overflow: hidden;
+	text-overflow:ellipsis;
+	padding-top: 5px;
+}
+
+.uploadSection .page-header {
+    padding-bottom: 9px;
+    margin: 10px 0 0px;
+}
+
+.uploadSection .page-header .tp {
+    width: 260px;
+    height: 685px;
+    overflow: auto;
+}
+
+.uploadSection .page-header  .tp li {
+    width: 100%;
+    height: 175px;
+    margin-bottom: 15px;
+    cursor: pointer;
+	overflow: hidden;
+}
+
+.uploadSection .page-header .tp li img {
+    width: 100%;
+    height: auto;
+}
+
+ 
+ 
+ 
+
+.uploadSection .dp .pf{
+    width: 900px;
+	float: right;
+	font-size: 16px;
+}
+
+.uploadSection .dp .pf .zpxx {
+ 
+    border: 1px solid #ddd;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+    padding: 30px 30px 0px;
+    border-radius: 4px;
+    margin-bottom: 40px;
+}
+
+
+.uploadSection .dp .pf .zpxx  h5{
+	    font-size: 16px;
+	    color: #333333;
+	    margin-bottom: 40px;
+}
+
+.uploadSection .dp .pf .zpxx p{
+	font-size: 16px;
+	color: #333;
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+ 
+.uploadSection .dp .pf .zpxx .yz {    
+     width: 50px;
+     height: 30px;
+	 margin-left: 10px;
+	 margin-right: 10px;
+	 text-align: center;
+	 outline: none;
+	 border: none;
+	 line-height: 40px;
+	 border-bottom: 1px solid #999;
+ }
+ 
+ 
+.uploadSection .dp .pf .zpxx .block {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 20px 0;
+	height: 30px; 
+}
+ 
+
+ 
+.uploadSection .dp .pf .zpxx .block .info {
+   float: left;
+}
+ 
+.uploadSection .dp .pf .zpxx .block #starOne{
+	float: left;
+}
+
+.uploadSection .dp .pf .zpxx .block p{
+	border-bottom: 0;
+}
+.uploadSection .dp .pf .zpxx .block .star_score{
+	float: left; 
+}
+
+.uploadSection .dp .pf .zpxx .block .attitude{
+	float: left;
+	padding-left: 10px;
+}
+
+
+
+.uploadSection .dp .pf .zpxx .order-evaluation-checkbox {
+    overflow: hidden;
+}
+
+ 
+
+.uploadSection .dp .pf .zpxx  .bqp {
+    width: 100px;
+    height: 60px;
+    line-height: 60px;
+    float: left;
+}
+
+.uploadSection .dp .pf .zpxx .ck1 {
+    padding: 20px 0 0px;
+	    width: 730px;
+	    float: right;
+}
+
+ 
+
+@font-face {
+	font-family: 'iconfont';  /* project id 247957 */
+	src: url('http://at.alicdn.com/t/font_wkv6intmx8cnxw29.eot');
+	src: url('http://at.alicdn.com/t/font_wkv6intmx8cnxw29.eot?#iefix') format('embedded-opentype'),
+	url('http://at.alicdn.com/t/font_wkv6intmx8cnxw29.woff') format('woff'),
+	url('http://at.alicdn.com/t/font_wkv6intmx8cnxw29.ttf') format('truetype'),
+	url('http://at.alicdn.com/t/font_wkv6intmx8cnxw29.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.order-evaluation-checkbox ul li {
+    width: auto;
+    height: auto;
+    padding: 0 25px;
+    border-radius: 0px;
+    border: 1px solid #e8e8e8;
+    text-align: center;
+    background: #fff;
+    font-size: 14px;
+    color: #333333;
+    line-height: 43px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    float: left;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.order-evaluation-checkbox ul li.checked {
+    border: 1px solid #e84c3d;
+}
+
+
+.order-evaluation-checkbox ul li i {
+    display: none;
+    color: #e84c3d;
+    position: absolute;
+    right: -4px;
+    bottom: -14px;
+    font-size: 20px;
+}
+
+
+.order-evaluation-checkbox ul li.checked i {
+    display: block;
+} 
+
+  .order-evaluation-textarea {
+     position: relative;
+     width: auto;
+     height: 170px;
+ }
+ 
+  .order-evaluation-textarea textarea {
+     width: 793px;
+     height: 100px;
+     border: 1px solid #e8e8e8;
+     position: absolute;
+     top: 0;
+     left: 0;
+     line-height: 22px;
+     padding: 15px;
+     color: #666;
+ }
+  .uploadSection .pic  .upload-ul{
+	  max-width: 100%;
+  }
+  
+ .order-evaluation-textarea span {
+      position: absolute;
+      bottom: 45px;
+      font-size: 12px;
+      color: #999;
+      right: 30px;
+  }
+  
+  .order-evaluation-textarea span em {
+      color: #e84c3d;
+  }
+  
+  .uploadSection .dp .pf .qued #btnSave {
+      width: 200px;
+      height: 48px;
+      border-radius: 6px; 
+      text-align: center;
+      line-height: 48px;
+      background: rgba(243,51,84,1.00); 
+      color: #fff;
+      font-size: 18px;
+      margin: 0px 50px 30px 0;
+  }
+   .uploadSection .dp .pf .qued a{
+  	  border: 1px solid #ddd;
+  	  background: rgba(243,51,84,0);
+  	  color: #333 !important;
+  	  width: 200px;
+  	  height: 48px;
+  	  border-radius: 6px;
+  	  display: inline-block;
+  	  text-align: center;
+  	  line-height: 48px;  
+  	  font-size: 18px;
+  	  margin:0px 50px 30px 0;
+   }

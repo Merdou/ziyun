@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hxzy.mapper.StudentMapper">
+  <resultMap id="BaseResultMap" type="com.hxzy.entity.Student">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="majorId" jdbcType="INTEGER" property="majorId" />
+    <result column="majorName" jdbcType="VARCHAR" property="majorName" />
+
+    <result column="classesId" jdbcType="INTEGER" property="classesId" />
+    <result column="classesName" jdbcType="VARCHAR" property="classesName" />
+
+    <result column="portrait" jdbcType="VARCHAR" property="portrait" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="joinDate" jdbcType="DATE" property="joinDate" />
+    <result column="sex" jdbcType="CHAR" property="sex" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="education" jdbcType="INTEGER" property="education" />
+    <result column="eduName" jdbcType="VARCHAR" property="eduName" />
+
+    <result column="schoolName" jdbcType="VARCHAR" property="schoolName" />
+    <result column="collegeMajor" jdbcType="VARCHAR" property="collegeMajor" />
+    <result column="idCard" jdbcType="VARCHAR" property="idCard" />
+    <result column="qq" jdbcType="VARCHAR" property="qq" />
+    <result column="homeAddress" jdbcType="VARCHAR" property="homeAddress" />
+    <result column="currentAddress" jdbcType="VARCHAR" property="currentAddress" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="loginPwd" jdbcType="VARCHAR" property="loginPwd" />
+    <result column="salt" jdbcType="VARCHAR" property="salt" />
+
+    <result column="openingDate" jdbcType="DATE" property="openingDate" />
+    <result column="endDate" jdbcType="DATE" property="endDate" />
+  </resultMap>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+   SELECT  s.id,s.`name`,s.majorId,s.classesId,s.portrait,s.mobile,s.joinDate,
+          s.sex,s.birthday,s.education,s.schoolName,s.collegeMajor,s.idCard,
+          s.qq,s.homeAddress,s.currentAddress,s.state,s.loginPwd,s.salt,m.`name` AS majorName,
+          c.`name` AS classesName,d.`name` AS eduName,c.openingDate,c.endDate
+  FROM
+        student AS s
+        INNER JOIN major AS m ON s.majorId = m.id
+        INNER JOIN classes AS c ON s.classesId = c.id
+        INNER JOIN sys_data AS d ON s.education = d.id
+  where
+         d.types=5  and  s.id = #{id,jdbcType=INTEGER}
+  </select>
+
+
+  <insert id="insert" parameterType="com.hxzy.entity.Student">
+    insert into student (id, `name`, majorId, 
+      classesId, portrait, mobile, 
+      joinDate, sex, birthday, education, 
+      schoolName, collegeMajor, idCard, 
+      qq, homeAddress, currentAddress, 
+      `state`, loginPwd, salt
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{majorId,jdbcType=INTEGER}, 
+      #{classesId,jdbcType=INTEGER}, #{portrait,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{joinDate,jdbcType=DATE}, #{sex,jdbcType=CHAR}, #{birthday,jdbcType=DATE}, #{education,jdbcType=INTEGER}, 
+      #{schoolName,jdbcType=VARCHAR}, #{collegeMajor,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR}, 
+      #{qq,jdbcType=VARCHAR}, #{homeAddress,jdbcType=VARCHAR}, #{currentAddress,jdbcType=VARCHAR}, 
+      #{state,jdbcType=INTEGER}, #{loginPwd,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}
+      )
+  </insert>
+
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.hxzy.entity.Student">
+    update student
+    <set>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="majorId != null">
+        majorId = #{majorId,jdbcType=INTEGER},
+      </if>
+      <if test="classesId != null">
+        classesId = #{classesId,jdbcType=INTEGER},
+      </if>
+      <if test="portrait != null">
+        portrait = #{portrait,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="joinDate != null">
+        joinDate = #{joinDate,jdbcType=DATE},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=CHAR},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="education != null">
+        education = #{education,jdbcType=INTEGER},
+      </if>
+      <if test="schoolName != null">
+        schoolName = #{schoolName,jdbcType=VARCHAR},
+      </if>
+      <if test="collegeMajor != null">
+        collegeMajor = #{collegeMajor,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null">
+        idCard = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        qq = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="homeAddress != null">
+        homeAddress = #{homeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="currentAddress != null">
+        currentAddress = #{currentAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        `state` = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="loginPwd != null">
+        loginPwd = #{loginPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null">
+        salt = #{salt,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="com.hxzy.entity.Student">
+    update student
+    set `name` = #{name,jdbcType=VARCHAR},
+      majorId = #{majorId,jdbcType=INTEGER},
+      classesId = #{classesId,jdbcType=INTEGER},
+      portrait = #{portrait,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      joinDate = #{joinDate,jdbcType=DATE},
+      sex = #{sex,jdbcType=CHAR},
+      birthday = #{birthday,jdbcType=DATE},
+      education = #{education,jdbcType=INTEGER},
+      schoolName = #{schoolName,jdbcType=VARCHAR},
+      collegeMajor = #{collegeMajor,jdbcType=VARCHAR},
+      idCard = #{idCard,jdbcType=VARCHAR},
+      qq = #{qq,jdbcType=VARCHAR},
+      homeAddress = #{homeAddress,jdbcType=VARCHAR},
+      currentAddress = #{currentAddress,jdbcType=VARCHAR},
+      `state` = #{state,jdbcType=INTEGER},
+      loginPwd = #{loginPwd,jdbcType=VARCHAR},
+      salt = #{salt,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="search" parameterType="com.hxzy.vo.StudentSearch" resultMap="BaseResultMap">
+     SELECT  s.id,s.`name`,s.majorId,s.classesId,s.portrait,s.mobile,s.joinDate,
+          s.sex,s.birthday,s.education,s.schoolName,s.collegeMajor,s.idCard,
+          s.qq,s.homeAddress,s.currentAddress,s.state,s.loginPwd,s.salt,m.`name` AS majorName,
+          c.`name` AS classesName,d.`name` AS eduName,c.openingDate,c.endDate
+    FROM
+        student AS s
+        INNER JOIN major AS m ON s.majorId = m.id
+        INNER JOIN classes AS c ON s.classesId = c.id
+        INNER JOIN sys_data AS d ON s.education = d.id
+    where  1=1
+
+    <if test="majorId!=null and majorId !=0 ">
+        and s.majorId=#{majorId}
+    </if>
+
+    <if test="classesId!=null and classesId!=0">
+       and s.classesId=#{classesId}
+    </if>
+
+    <if test="name!=null and name!=''">
+       <bind name="v" value="'%'+ name+'%'" ></bind>
+       and  s.`name`  like  #{v}
+    </if>
+
+    <if test="education!=null and  education!=0 ">
+      and  s.education=#{education}
+    </if>
+
+    <if test="state!=null and state!=0">
+      and s.state=#{state}
+    </if>
+
+    order by s.majorId, s.classesId,s.joinDate
+
+  </select>
+
+  <select id="login" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT  s.id,s.`name`,s.majorId,s.classesId,s.portrait,s.mobile,s.joinDate,
+          s.sex,s.birthday,s.education,s.schoolName,s.collegeMajor,s.idCard,
+          s.qq,s.homeAddress,s.currentAddress,s.state,s.loginPwd,s.salt,m.`name` AS majorName,
+          c.`name` AS classesName,d.`name` AS eduName,c.openingDate,c.endDate
+    FROM
+        student AS s
+        INNER JOIN major AS m ON s.majorId = m.id
+        INNER JOIN classes AS c ON s.classesId = c.id
+        INNER JOIN sys_data AS d ON s.education = d.id
+   where
+        s.mobile=#{mobile}
+
+  </select>
+
+</mapper>

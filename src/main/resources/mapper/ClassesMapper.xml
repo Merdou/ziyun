@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hxzy.mapper.ClassesMapper">
+  <resultMap id="BaseResultMap" type="com.hxzy.entity.Classes">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="marjorId" jdbcType="INTEGER" property="marjorId" />
+    <result column="majorName" jdbcType="VARCHAR" property="majorName" />
+    <result column="openingDate" jdbcType="DATE" property="openingDate" />
+    <result column="endDate" jdbcType="DATE" property="endDate" />
+
+    <!-- 一对多配置 List<Teacher> teacherArr -->
+    <collection property="teacherArr" ofType="com.hxzy.entity.Teacher">
+      <id property="id" column="teacherId"/>
+      <result property="name" column="teacherName"/>
+    </collection>
+
+  </resultMap>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+   SELECT     c.id,c.`name`,c.marjorId,c.openingDate,c.endDate,m.`name` AS majorName
+   FROM  classes AS c  INNER JOIN major AS m ON c.marjorId = m.id
+    where c.id = #{id,jdbcType=INTEGER}
+  </select>
+
+
+
+  <insert id="insert" parameterType="com.hxzy.entity.Classes" useGeneratedKeys="true" keyProperty="id">
+    insert into classes (id, `name`, marjorId,  openingDate)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{marjorId,jdbcType=INTEGER},   #{openingDate,jdbcType=DATE})
+  </insert>
+
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.hxzy.entity.Classes">
+    update classes
+    <set>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="marjorId != null">
+        marjorId = #{marjorId,jdbcType=INTEGER},
+      </if>
+      <if test="openingDate != null">
+        openingDate = #{openingDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null">
+        endDate = #{endDate,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <update id="updateByPrimaryKey" parameterType="com.hxzy.entity.Classes">
+    update classes
+    set `name` = #{name,jdbcType=VARCHAR},
+      marjorId = #{marjorId,jdbcType=INTEGER},
+      openingDate = #{openingDate,jdbcType=DATE},
+      endDate = #{endDate,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="search" parameterType="com.hxzy.vo.ClassesSearch" resultMap="BaseResultMap">
+    SELECT
+        c.id,c.`name`,c.marjorId,c.openingDate,c.endDate,
+        m.`name` AS majorName,t.id AS teacherId,t.`name` AS teacherName
+    FROM
+        classes AS c
+        LEFT JOIN teacher_classes AS tc ON tc.classesId = c.id
+        LEFT JOIN teacher AS t ON t.id = tc.teacherId
+        INNER JOIN major AS m ON c.marjorId = m.id
+    where 1=1
+
+    <if test="marjorId!=null  and  marjorId!=0 ">
+      and c.marjorId=#{marjorId ,jdbcType=INTEGER }
+    </if>
+
+    <choose>
+       <when test=" state!=null and  state==1  ">
+          <!-- 还未结课 -->
+         and  c.endDate is null
+       </when>
+
+      <when test=" state!=null and  state==2  ">
+          <!-- 已结课 -->
+         and  c.endDate is not null
+      </when>
+    </choose>
+
+    order by c.openingDate desc
+
+  </select>
+
+  <!-- 根据专业查询所有的班级-->
+  <select id="selectByMajorId" parameterType="int" resultType="com.hxzy.entity.Classes">
+    select id ,name
+    from classes
+    where marjorId=#{majorId}
+    order by openingDate desc
+  </select>
+
+  <!-- 根据专业查询还未结课的班级-->
+  <select id="selectByNotCloseMajorId" parameterType="int" resultType="com.hxzy.entity.Classes">
+    select id ,name
+    from classes
+    where marjorId=#{majorId}  and endDate is null
+    order by openingDate desc
+  </select>
+
+  <delete id="deleteByClassesId" parameterType="int">
+    delete from teacher_classes where classesId=#{classesId}
+  </delete>
+
+  <insert id="insertBatchTeacherClasses" >
+     insert into teacher_classes(teacherId,classesId) values
+     <foreach collection="teacherArr" item="p" separator=",">
+       (#{p} , #{classesId}  )
+     </foreach>
+  </insert>
+
+
+  <select id="searchTeachClasses" parameterType="com.hxzy.vo.TeachClassesSearch"  resultType="com.hxzy.entity.Classes">
+    SELECT
+      c.id,      c.`name`,      c.marjorId,      c.openingDate,
+      c.endDate,      m.`name` AS majorName
+      FROM
+      classes AS c
+      INNER JOIN major AS m ON c.marjorId = m.id
+      INNER JOIN teacher_classes AS tc ON c.id = tc.classesId
+      where tc.teacherId=#{teacherId}
+      order by c.openingDate desc
+  </select>
+
+</mapper>

@@ -1,0 +1,200 @@
+.uploadSection{
+	width: 100%;
+	min-width: 1200px;
+}
+
+.uploadSection .dpz {
+    margin-top: 30px; 
+}
+
+.uploadSection .title{ 
+	width:282px;
+	height:46px;
+	background:url(../../img/jiantou.png) no-repeat;
+	background-size:282px 46px;
+	color:white;
+	font-size:18px;
+	text-align:center;
+	line-height:46px; 
+}
+ 
+.uploadSection .dp {
+    width: 100%; 
+    overflow: hidden;
+}
+
+.uploadSection .dp .zy{
+	width: 260px; 
+	float: left;
+	padding: 30px 0 0;
+}
+
+.uploadSection .page-header {
+    padding-bottom: 9px;
+    margin: 10px 0 0px;
+}
+
+
+.sigle li{
+	float: none;
+    width: 150px;
+    height: 150px;
+}
+
+.sigle .upload-pick{
+	background: none;
+	height: 41px;
+	text-align: center;
+}
+
+.sigle .webuploader-pick{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.uploadSection .dp .pf{
+    width: 900px;
+	float: right;
+	font-size: 16px;
+}
+
+.uploadSection .dp .pf .zpxx {
+ 
+    border: 1px solid #ddd;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+    padding: 30px 0px;
+    border-radius: 4px;
+    margin-bottom: 40px;
+}
+
+.uploadSection .dp .pf .zpxx h5 {
+    margin-left: 30px;
+    margin-bottom: 40px;
+	font-size: 18px;
+}
+
+.uploadSection .dp .pf  .mc {
+    width: 838px;
+    border: 1px solid rgba(0,0,0,0.1);
+    position: relative;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.uploadSection .dp .pf  .mc input{
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border: none;
+	 line-height: 40px;
+    margin-left: 0px;
+	font-size: 16px;
+}
+
+.uploadSection .dp .pf  .mc select{
+    height: 40px;
+    width: 80%;
+    font-size:16px;
+}
+
+.uploadSection .dp .pf  .mc span {
+     color: #bbb;
+     position: absolute;
+     bottom: 15px;
+     right: 10px;
+ }
+ 
+ .uploadSection .dp .pf  .sm { 
+	 width: 838px;
+     padding: 20px 30px 0;
+     border-top: 1px solid rgba(0,0,0,0.1);
+     position: relative;
+ }
+ 
+ .uploadSection .dp .pf .description{
+	 width: 100%;
+	 border: 1px solid rgba(0,0,0,0.1);
+	 height: 100px;
+	 font-size: 16px;
+ }
+ 
+ .uploadSection .dp .pf .sm span {
+     color: #bbb;
+     position: absolute;
+     bottom: 15px;
+     right: 40px;
+ }
+ 
+  .uploadSection .dp .pf  .bq1,  .uploadSection .dp .pf  .nr , .uploadSection .dp .pf  .lx1{ 
+     height: 60px;
+     padding: 0px 30px;
+     line-height: 60px;
+ }
+ 
+ .uploadSection .dp .pf  .zplb label {
+     margin-right: 10px;
+     color: #000;
+     font-weight: normal; 
+ }
+ 
+ 
+ .uploadSection .dp .pf .qued #btnSave {
+     width: 200px;
+     height: 48px;
+     border-radius: 6px; 
+     text-align: center;
+     line-height: 48px;
+     background: rgba(243,51,84,1.00); 
+     color: #fff;
+     font-size: 18px;
+     margin: 0px 50px 30px 0;
+ }
+  .uploadSection .dp .pf .qued a{
+	  border: 1px solid #ddd;
+	  background: rgba(243,51,84,0);
+	  color: #333 !important;
+	  width: 200px;
+	  height: 48px;
+	  border-radius: 6px;
+	  display: inline-block;
+	  text-align: center;
+	  line-height: 48px;  
+	  font-size: 18px;
+	  margin:0px 50px 30px 0;
+  }
+ 
+ .uploadSection .dp .pf .zpxx h6 {
+     margin-left: 30px;
+     margin-bottom: 40px;
+ 	 font-size: 14px;
+	 font-weight: normal;
+ }
+  .uploadSection .dp .pf .pic h5 {
+	 margin-bottom: 10px;
+  }
+  
+  .uploadSection .pic .page-header{
+	   margin-left: 30px;
+	   width: auto;
+  }
+  
+  .uploadSection .pic  .webuploader-pick{
+	  background-color: transparent;
+  }
+  
+  .uploadSection .pic  .upload-ul{
+	  max-width: 100%;
+  }
+
+.form-group .error{
+      color: #a94442;
+  }
+.form-group input.error,.form-group textarea.error{
+
+    border: 1px solid #ed5565!important;
+}
+
+.form-group input.valid,.form-group textarea.valid{
+    border: 1px solid #1ab394!important;
+}

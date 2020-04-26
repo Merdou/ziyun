@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hxzy.mapper.DataMapper">
+
+  <resultMap id="BaseResultMap" type="com.hxzy.entity.Data">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="types" jdbcType="INTEGER" property="types" />
+  </resultMap>
+
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select  *
+    from sys_data
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+
+
+  <insert id="insert" parameterType="com.hxzy.entity.Data">
+    insert into sys_data (id, `name`, `state`, 
+      types)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, 
+      #{types,jdbcType=INTEGER})
+  </insert>
+
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.hxzy.entity.Data">
+    update sys_data
+    <set>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        `state` = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="types != null">
+        types = #{types,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="com.hxzy.entity.Data">
+    update sys_data
+    set `name` = #{name,jdbcType=VARCHAR},
+      `state` = #{state,jdbcType=INTEGER},
+      types = #{types,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectTypes" parameterType="int" resultMap="BaseResultMap">
+    select *
+    from sys_data
+    where  `state` =1  and  types = #{types,jdbcType=INTEGER}
+  </select>
+
+
+  <!--查询所有数据-->
+  <select id="search"  parameterType="com.hxzy.vo.DataSearchVO" resultType="com.hxzy.entity.Data">
+    select * from sys_data
+    where `state`=1  and types=#{types}
+    order by id
+  </select>
+
+  <select id="existsName"  parameterType="com.hxzy.entity.Data" resultType="int">
+    select count(*) from sys_data
+    where name=#{name} and   types=#{types}
+  </select>
+
+
+</mapper>

@@ -1,0 +1,233 @@
+
+.tab .ypq .ypt .yptll{
+	width:140px;
+	height:100%;
+	border-bottom:2px solid #ff3457;
+	float:left;
+	line-height:50px;
+	text-align:center;
+	color:#333333;
+}
+
+.tab .ypq .ypt .yptrr{
+	width:140px;
+	height:50px;
+	border-bottom:2px solid transparent;
+	float:left;
+	line-height:50px;
+	text-align:center;
+	color:#333333;
+}
+
+.tab .ypq .ypt div:hover{
+	border-bottom:2px solid #ff3457;
+}
+
+.tab .yp{
+	width:100%;
+	height:auto;
+	margin-top:40px;
+}
+
+.tab .yp .ypzy{
+	width:818px;
+	height:auto;
+	margin:20px 0px;
+	border:1px solid #DDDDDD;
+	padding:20px;
+	overflow:hidden;
+	border-radius:4px;
+	box-shadow:0px 3px 4px rgba(0,0,0,0.2);
+}
+.tab .yp .ypzy:hover{
+	background-color:#f8feff;
+}
+
+.tab .yp .ypl{
+	width:210px;
+	height:210px;
+	border-radius:4px;
+	overflow:hidden;
+	float:left;
+	margin-right:20px;
+	overflow:hidden;
+}
+
+.tab .yp li:hover  .ypl img{
+	transform:scale(1.2,1.2);
+}
+
+.tab .yp .ypl img{
+	width:100%;
+	height:100%;
+	transition:all 300ms ease 100ms;
+}
+
+.tab .yp  .ypr{
+	width:588px;
+	height:auto;
+	overflow:hidden;
+	float:left;
+}
+
+.tab .yp  .ypr .ypry{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	margin:0px 0px 16px 0px;
+}
+
+.tab .yp  .ypr .ypryl{
+	float:left;
+	color:#333;
+	font-size:18px;
+	
+}
+.tab .yp  .ypr .ypryr{
+	float:right;
+	color:#999;
+	font-size:14px;
+}
+
+.tab .yp  .ypr .ypryr_a{
+	color:#666 !important;
+}
+.tab .yp  .ypr .ypryr_a:hover{
+	color:#ff3457 !important;
+}
+.tab .yp  .ypr .ypryr span{
+	color:#ff3457;
+	font-size:20px;
+}
+.tab .yp  .ypr .ypre{
+	width:auto;
+	height:auto;
+	color:#999;
+	font-size:14px;
+	margin-bottom:14px;
+}
+
+.tab .yp  .ypr .ypre_a{
+	margin-bottom:20px !important;
+}
+.tab .yp  .ypr .ypre span{
+	padding-right:40px;
+}
+.tab .yp  .ypr .yprs{
+	width:auto;
+	height:auto;
+	color:#333;
+	font-size:14px;
+	margin-bottom:14px;
+	overflow:hidden;
+}
+.tab .yp  .ypr .yprsl{
+	float:left;
+	width:auto;
+	height:auto;
+	margin:10px 12px 0px 0px;
+}
+.tab .yp  .ypr .yprsr{
+	float:left;
+	width:auto;
+	height:auto;
+}
+
+.tab .yp  .ypr .yprsr .atar_Show{
+    background:  url(../../img/starky.png);
+	width: 110px;
+	height: 21px;
+	position: relative; 
+	margin-top: 5px;
+}
+
+.tab .yp  .ypr .yprsr .atar_Show  p {
+    background:url(../../img/starsy.png);
+    left: 0;
+    height: 21px;
+    width: 0;
+}
+
+.tab .yp  .ypr .ypri{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	margin-bottom:14px;
+}
+.tab .yp  .ypr .ypril{
+	float:left;
+	width:auto;
+	height:auto;
+	color:#333;
+	font-size:14px;
+	margin:4px 12px 0px 0px;
+}
+.tab .yp  .ypr .yprir{
+	float:left;
+	width:auto;
+	height:auto;
+	overflow:hidden;
+	color:#ff3457;
+	font-size:12px;
+}
+.tab .yp  .ypr .ypril_a{
+	float:left;
+	width:100px;
+	height:24px;
+	border-radius:13px;
+	border:1px dashed #ff3457;
+	margin-right:20px;
+	text-align:center;
+	line-height:26px;
+}
+.tab .yp  .ypr .ypril_a_a{
+	float:left;
+	width:80px;
+	height:24px;
+	border-radius:13px;
+	border:1px dashed #ff3457;
+	margin-right:20px;
+	text-align:center;
+	line-height:26px;
+}
+.tab .yp  .ypr .yprw{
+	width:auto;
+	height:auto;
+	overflow:hidden;
+}
+.tab .yp  .ypr .yprwl{
+	float:left;
+	width:auto;
+	height:auto;
+	color:#333;
+	font-size:14px;
+	margin:4px 12px 0px 0px;
+}
+.tab .yp  .ypr .yprwr{
+	float:left;
+	width:506px;
+	height:40px;
+	color:#999;
+	font-size:16px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	margin-top:4px;
+}
+.tab .yp  .ypr .yprwr_a{
+	float:left;
+	width:506px;
+	height:80px;
+	color:#3C3C3C;
+	font-size:14px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	margin-top:4px;
+}	
+
+.tab .yp .ypryl:hover  a,.tab .yp .ypryr:hover a{
+	color:#ff3457;
+} 
+ 
+.tab .ypre span:hover{
+	color:#333;
+}
